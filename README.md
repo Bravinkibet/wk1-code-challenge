@@ -29,15 +29,17 @@ Otherwise, it outputs the number of demerit points.
 This setup demonstrates a straightforward approach to creating a command-line application that interacts with the user to check the speed of a car and calculate demerit points based on the speed limit. The use of the prompt function for user input is a common pattern in Node.js applications for command-line interfaces, allowing for interactive and dynamic user experiences.
 
 ## 3.net salary calculator
-This code is designed to calculate an individual's net salary by taking into account various deductions such as tax, NHIF, and NSSF. The code defines tax rates, NHIF rates, and NSSF contribution rates, and then uses these to calculate the net salary based on the basic salary and any additional benefits.
+The setup for the Net Salary Calculator is designed to calculate an individual's net salary, taking into account various deductions such as tax, NHIF (National Health Insurance Fund), and NSSF (National Social Security Fund). 
+Here's a detailed breakdown of the setup:
 
-However, there are a few issues and improvements that can be made to the code:
-
-Tax Calculation Function: The calculateTax function uses hardcoded conditions to determine the tax rate. This approach is not efficient and does not utilize the TAX_RATES array defined at the beginning. Instead, it should iterate over the TAX_RATES array to find the correct tax rate based on the basic salary.
-NHIF Calculation Function: Similar to the tax calculation, the calculateNHIF function also uses hardcoded conditions. It should iterate over the NHIF_RATES array to find the correct NHIF amount based on the basic salary.
-NSSF Calculation Function: This function correctly calculates both the employee and employer contributions based on the basic salary. However, it returns an array, which might not be the most intuitive way to handle these values. It might be better to return an object with clear names for each contribution.
-Net Salary Calculation Function: This function correctly calculates the net salary by subtracting the total deductions (tax, NHIF, and NSSF) from the gross salary (basic salary + benefits). However, it does not account for the benefits in the calculation of the gross salary. The gross salary should include both the basic salary and the benefits.
-Console Log Statement: The console.log statement at the end attempts to log the netSalary variable, but this variable is not defined in the provided code. The calculateNetSalary function should be called with appropriate arguments, and its return value should be stored in a variable before logging.
+Tax Rates and Brackets: The TAX_RATES array defines the tax rates applicable to different salary brackets. Each object in the array specifies a lower and upper limit for the salary bracket and the corresponding tax rate.
+NHIF Rates and Brackets: The NHIF_RATES array defines the NHIF amounts applicable to different salary brackets. Each object specifies a lower and upper limit for the salary bracket and the corresponding NHIF amount.
+NSSF Contribution Rates: The NSSF_RATE_EMPLOYEE and NSSF_RATE_EMPLOYER constants define the contribution rates for both the employee and employer to the NSSF.
+Tax Calculation Function: The calculateTax function calculates the tax based on the basic salary. It uses a series of if and else if statements to determine the tax rate based on the salary bracket.
+NHIF Calculation Function: The calculateNHIF function calculates the NHIF amount based on the basic salary. It uses a similar approach to the tax calculation function, determining the NHIF amount based on the salary bracket.
+NSSF Calculation Function: The calculateNSSF function calculates both the employee and employer contributions to the NSSF based on the basic salary. It returns an array with the employee and employer contributions.
+Net Salary Calculation Function: The calculateNetSalary function calculates the net salary by subtracting the total deductions (tax, NHIF, and NSSF) from the gross salary (basic salary + benefits). It uses the previously defined functions to calculate each component of the deductions.
+Execution: The script ends with a console.log statement that attempts to log the netSalary variable. However, this variable is not defined in the provided code. The calculateNetSalary function should be called with appropriate arguments, and its return value should be stored in a variable before logging.
 
 ## setup
 This setup demonstrates a comprehensive approach to calculating an individual's net salary, taking into account various deductions based on the salary brackets. It uses arrays and constants to define tax and NHIF rates, and functions to calculate each component of the deductions and the net salary.
