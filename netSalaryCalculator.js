@@ -9,10 +9,12 @@ function calculateNetSalary() {
     const taxRate = 0.3;
     // NHIF rates
     const nhifRates = 0.025;
+    // NSSF rates
+    const nssfRates = 0.06;
     // Deductions and the gross salary
     const nhifDeduction = basicSalary * nhifRates;
     const payee = basicSalary * taxRate;
-    const nssfDeduction = basicSalary * 0.06;
+    const nssfDeduction = basicSalary * nssfRates;
     const grossSalary = basicSalary + benefits;
     // Net salary
     const netSalary = grossSalary - (payee + nhifDeduction + nssfDeduction);
