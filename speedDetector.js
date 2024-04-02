@@ -29,3 +29,4 @@ function checkSpeed() {
 
 // Call the checkSpeed function to start the program
 checkSpeed();
+
